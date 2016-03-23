@@ -17,16 +17,7 @@ RUN zypper --gpg-auto-import-keys --non-interactive in --force-resolution nodejs
 RUN zypper --non-interactive rr nodejs
 
 # Install requirements
-RUN zypper --non-interactive in --force-resolution which python-Pygments nodejs ca-certificates ca-certificates-mozilla ca-certificates-cacert sudo mercurial
-
-# The long line below is the expansion of the following shorter line.
-# We track the long line explicitly so we can uninstall the packages only needed for building.
-#RUN zypper --non-interactive install php5-devel php5-pear gcc autoconf make
-RUN zypper --non-interactive install --force-resolution autoconf automake binutils cpp cpp48 gcc gcc48 glibc-devel libasan0 libatomic1 libcloog-isl4 libgomp1 libisl10 libitm1 libltdl7 libmpc3 libmpfr4 libpcre16-0 libpcrecpp0 libpcreposix0 libstdc++-devel libstdc++48-devel libtool libtsan0 libxml2-devel libxml2-tools linux-glibc-devel m4 make ncurses-devel pcre-devel php5-devel php5-pear php5-zlib pkg-config readline-devel tack xz-devel zlib-devel
-
-# Now we don't need any of the build tools anymore, remove them.
-#RUN zypper --non-interactive remove gcc autoconf automake
-RUN zypper --non-interactive remove --force-resolution autoconf automake binutils cpp cpp48 gcc gcc48 glibc-devel libasan0 libatomic1 libcloog-isl4 libgomp1 libisl10 libitm1 libltdl7 libmpc3 libmpfr4 libpcre16-0 libpcrecpp0 libpcreposix0 libstdc++-devel libstdc++48-devel libtool libtsan0 libxml2-devel libxml2-tools linux-glibc-devel m4 ncurses-devel pcre-devel php5-devel php5-pear pkg-config readline-devel tack xz-devel zlib-devel
+RUN zypper --non-interactive in --force-resolution which python-Pygments nodejs ca-certificates ca-certificates-mozilla ca-certificates-cacert sudo mercurial php5-mbstring php5-mysql php5-curl php5-pcntl php5-gd php5-openssl php5-ldap php5-fileinfo php5-posix php5-json php5-iconv php5-ctype php5-zip php5-sockets php5 php5-xmlwriter php5-opcache ImageMagick
 
 # Install a few extra things
 RUN zypper --non-interactive install --force-resolution vim vim-data
