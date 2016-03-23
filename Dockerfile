@@ -17,7 +17,7 @@ RUN zypper --gpg-auto-import-keys --non-interactive in --force-resolution nodejs
 RUN zypper --non-interactive rr nodejs
 
 # Install requirements
-RUN zypper --non-interactive in --force-resolution which python-Pygments nodejs ca-certificates ca-certificates-mozilla ca-certificates-cacert sudo mercurial php5-mbstring php5-mysql php5-curl php5-pcntl php5-gd php5-openssl php5-ldap php5-fileinfo php5-posix php5-json php5-iconv php5-ctype php5-zip php5-sockets php5 php5-xmlwriter php5-opcache ImageMagick
+RUN zypper --non-interactive in --force-resolution which python-Pygments nodejs ca-certificates ca-certificates-mozilla ca-certificates-cacert sudo mercurial php5-mbstring php5-mysql php5-curl php5-pcntl php5-gd php5-openssl php5-ldap php5-fileinfo php5-posix php5-json php5-iconv php5-ctype php5-zip php5-sockets php5 php5-xmlwriter ImageMagick
 
 # Install a few extra things
 RUN zypper --non-interactive install --force-resolution vim vim-data
