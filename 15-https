@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Create the directory
+mkdir /etc/nginx/servers
+
+# Enable HTTP server
+mv /etc/nginx/disabled-server-http.conf /etc/nginx/servers/http.conf
+
+if [ -e /config/cert.pem ]; then
+	if [ -e /config/cert.key ]; then
+            echo "Enabling SSL due to presence of certificates!"
+
+            # Enable HTTPS using the manual configuration
+            mv /etc/nginx/disabled-server-https.conf /etc/nginx/servers/https.conf
+        fi
+fi

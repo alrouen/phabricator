@@ -93,7 +93,9 @@ EXPOSE 22280
 # Add files
 ADD nginx.conf /etc/nginx/nginx.conf
 ADD server-http.conf /etc/nginx/disabled-server-http.conf
+ADD server-https.conf /etc/nginx/disabled-server-https.conf
 ADD fastcgi.conf /etc/nginx/fastcgi.conf
+ADD 15-https /etc/init.simple/15-https
 ADD 25-nginx /etc/init.simple/25-nginx
 ADD 25-php-fpm /etc/init.simple/25-php-fpm
 ADD 10-boot-conf /etc/init.simple/10-boot-conf
